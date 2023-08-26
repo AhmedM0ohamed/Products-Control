@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="w-75 mx-auto py-4">
+        <h3 class="py-3 fw-bolder">products control</h3>
+        <label for="productName">Name</label>
+        <input type="text" id="productName" class="form-control mb-2" oninput="validate()">
+        <label for="productPrice">Price</label>
+        <input type="number" id="productPrice" class="form-control mb-2">
+        <label for="productCount">Count</label>
+        <input type="number" id="productCount" class="form-control mb-2">
+        <label for="productCategory">Category</label>
+        <input type="text" id="productCategory" class="form-control mb-2">
+        <label for="productDescription">Description</label>
+        <textarea type="text"  id="productDescription" class="form-control mb-2"></textarea>
+        <button class="btn btn-info" id="buttonAdd" onclick="addProduct()">add</button>
+        <button class="btn d-none btn-info" id="buttonUpdate" onclick="update()">update</button>
+        <button class="btn btn-info" id="buttonReset" onclick="clearForm()">reset</button>
+    </div>
+
+    <div class="w-75 mx-auto py-4">
+        <label for="productSearch">Search :</label>
+        <input type="text" id="productSearchName" class="form-control mb-2" placeholder="search by name" oninput="searchProduct(this.value)">
+        <input type="text" id="productSearchCategory" class="form-control mb-2 d-none" placeholder="search by category" oninput="searchProduct(this.value)">
+        
+        <button class="btn btn-info" id="buttonSearchName" onclick="nameSearch()">search by name</button>
+        <button class="btn btn-info" id="buttonSearchCategory" onclick="categorySearch()">search by category</button>
+        <button class="btn btn-info form-control mt-2" id="buttonDelete" onclick="deleteProducts()">Delete all</button>
+    </div>
+    
+    <table class="table table-bordered  w-75 mx-auto">
+        <thead>
+            <th>index</th>
+            <th>ProductName</th>
+            <th>ProductPrice</th>
+            <th>ProductCategory</th>
+            <th>ProductDescription</th>
+            <th>update</th>
+            <th>delete</th>
+        </thead>
+        <tbody id="tableBody">
+            
+        </tbody>
+    </table>
+    <script src="js/productJS.js"></script>
+</body>
+</html>
